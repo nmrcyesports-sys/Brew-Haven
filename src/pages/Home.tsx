@@ -12,6 +12,7 @@ export function Home() {
 
   return (
     <>
+      <SEO title="Café & Kitchen" description="Experience slow moments, specialty coffee, and handcrafted food at Brew Haven." />
       <header className="hero" id="home">
         <div className="hero-content">
           <ScrollReveal delay={0.1}>

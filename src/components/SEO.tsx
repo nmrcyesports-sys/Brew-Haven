@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+
 
 interface SEOProps {
   title: string;
@@ -19,7 +19,7 @@ export function SEO({
 }: SEOProps) {
   const fullTitle = `${title} | Brew Haven`;
   return (
-    <Helmet>
+    <>
       {/* Standard metadata tags */}
       <title>{fullTitle}</title>
       <meta name='description' content={description} />
@@ -38,6 +38,6 @@ export function SEO({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-    </Helmet>
+    </>
   );
 }
