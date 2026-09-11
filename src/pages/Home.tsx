@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { MOCK_PRODUCTS } from '../data/products';

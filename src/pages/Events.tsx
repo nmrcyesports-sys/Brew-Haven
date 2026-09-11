@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import { motion } from 'motion/react';
 import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,8 @@ import { Link } from 'react-router-dom';
 export function Events() {
   return (
     <div className="w-full h-full flex flex-col p-4 sm:p-8 lg:p-12 overflow-y-auto custom-scrollbar">
+      <SEO title="Events" description="Join our upcoming cupping sessions, live acoustic nights, and workshops at Brew Haven." />
+
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <h1 className="font-serif text-5xl md:text-7xl text-[#F4E5CB] mb-6">Events</h1>

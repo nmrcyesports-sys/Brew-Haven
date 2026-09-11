@@ -1,9 +1,12 @@
+import { SEO } from '../components/SEO';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Contact() {
   return (
     <div className="w-full h-full flex flex-col p-4 sm:p-8 lg:p-12 overflow-y-auto custom-scrollbar">
+      <SEO title="Contact Us" description="Get in touch with Brew Haven. Find our location, opening hours, and contact details." />
+
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <h1 className="font-serif text-5xl md:text-7xl text-[#F4E5CB] mb-6">Contact Us</h1>

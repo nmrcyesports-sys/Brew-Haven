@@ -1,0 +1,8 @@
+{
+  "name": "Brew Haven Café & Kitchen",
+  "description": "Specialty coffee, handcrafted food, and a space designed to make you stay a little longer. Experience slow moments and memorable cups.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

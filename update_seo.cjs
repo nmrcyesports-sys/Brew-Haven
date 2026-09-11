@@ -1,9 +1,15 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Brew Haven | Café & Kitchen</title>
+const fs = require('fs');
+
+// 1. Update metadata.json
+const metadataPath = 'metadata.json';
+let metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+metadata.name = "Brew Haven Café & Kitchen";
+metadata.description = "Specialty coffee, handcrafted food, and a space designed to make you stay a little longer. Experience slow moments and memorable cups.";
+fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));
+
+// 2. Update index.html
+let html = fs.readFileSync('index.html', 'utf8');
+const metaTags = `    <title>Brew Haven | Café & Kitchen</title>
     <meta name="description" content="Specialty coffee, handcrafted food, and a space designed to make you stay a little longer." />
     <meta name="keywords" content="coffee, cafe, brew haven, specialty coffee, handcrafted food, premium cafe, kitchen, espresso, breakfast, pastry" />
     <meta name="author" content="Brew Haven Café & Kitchen" />
@@ -24,14 +30,12 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Brew Haven | Café & Kitchen" />
     <meta name="twitter:description" content="Specialty coffee, handcrafted food, and a space designed to make you stay a little longer." />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-[#160B07] text-[#F4E5CB] antialiased overflow-x-hidden selection:bg-[#D6A45D]/30 selection:text-[#F4E5CB]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80" />`;
 
+// Replace everything between <meta name="viewport"...> and <link rel="preconnect" ...>
+html = html.replace(
+  /<title>.*?<meta name="twitter:card" content="summary_large_image" \/>/s,
+  metaTags
+);
+
+fs.writeFileSync('index.html', html);

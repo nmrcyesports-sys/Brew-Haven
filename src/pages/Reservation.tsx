@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
@@ -69,6 +70,8 @@ export function Reservation() {
   if (bookingComplete) {
     return (
       <div className="flex flex-col items-center justify-center h-full p-8 text-center bg-[#160B07]">
+      <SEO title="Book a Table" description="Reserve your spot at Brew Haven. Whether for a quiet morning or an evening event, we have a table for you." />
+
         <CheckCircle2 className="w-20 h-20 text-[#D6A45D] mb-6" />
         <h2 className="font-serif text-4xl text-[#F4E5CB] mb-4">Reservation Confirmed</h2>
         <p className="text-white/50 mb-8 max-w-md text-sm">

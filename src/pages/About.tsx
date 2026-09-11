@@ -1,9 +1,12 @@
+import { SEO } from '../components/SEO';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 
 export function About() {
   return (
     <div className="w-full h-full flex flex-col p-4 sm:p-8 lg:p-12 overflow-y-auto custom-scrollbar">
+      <SEO title="Our Story" description="Learn about the origins of Brew Haven, our philosophy, and our dedication to the art of coffee." />
+
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <h1 className="font-serif text-5xl md:text-7xl text-[#F4E5CB] mb-6">Our Story</h1>

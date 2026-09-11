@@ -4,6 +4,7 @@
  */
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { MainLayout } from './components/MainLayout';
 import { Home } from './pages/Home';
 import { Menu } from './pages/Menu';
@@ -22,7 +23,8 @@ import { TableOrder } from './pages/TableOrder';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -43,5 +45,6 @@ export default function App() {
         </Routes>
       </MainLayout>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }

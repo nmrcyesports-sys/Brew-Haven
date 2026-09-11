@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import { useState } from 'react';
 import { useStore } from '../store/useStore';
 import { Search, ShoppingBag, Leaf, Star, Heart } from 'lucide-react';
@@ -21,6 +22,8 @@ export function Menu() {
 
   return (
     <div className="w-full px-4 sm:px-8 py-10 pb-24">
+      <SEO title="Menu" description="Explore our curated selection of espresso, pour-overs, artisan teas, and locally-sourced pastries." />
+
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 max-w-7xl mx-auto">
         <div>
