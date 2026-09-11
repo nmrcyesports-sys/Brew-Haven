@@ -15,6 +15,13 @@ import {
   updateProfile
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
+
+declare global {
+  interface Window {
+    recaptchaVerifier: any;
+  }
+}
+
 import { auth, googleProvider, db } from '../lib/firebase';
 
 export function Login() {
